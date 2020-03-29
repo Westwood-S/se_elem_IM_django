@@ -30,7 +30,6 @@ class Chat extends React.Component {
         callback();
         return;
       } else {
-        console.log("wait for connection...");
         component.waitForSocketConnection(callback);
       }
     }, 100);
