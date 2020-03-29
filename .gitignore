@@ -6,6 +6,11 @@ node_modules
 /.pnp
 .pnp.js
 
+/bin
+/lib
+/share
+/local
+
 # testing
 /coverage
 
