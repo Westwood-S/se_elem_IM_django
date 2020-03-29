@@ -112,6 +112,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 CSRF_COOKIE_NAME = "csrftoken"
 
-HOST_URL = 'https://justdjango-chat.herokuapp.com'
+HOST_URL = 'https://cs300-s20.herokuapp.com'
 if DEBUG:
     HOST_URL = 'http://127.0.0.1:8000'
