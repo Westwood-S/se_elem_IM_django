@@ -1,4 +1,4 @@
-let DEBUG = false;
+let DEBUG = true;
 let HOST_URL = "https://cs300-s20.herokuapp.com";
 let SOCKET_URL = "wss://cs300-s20.herokuapp.com";
 if (DEBUG) {
