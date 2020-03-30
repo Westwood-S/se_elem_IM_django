@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9nneu#^7_aai*(#(6_qiihu-^k-+%a86&vjh=_i9#(c4^8s51n'
 DEBUG = True
-ALLOWED_HOSTS = ['justdjango-chat.herokuapp.com', '127.0.0.1', 'cs300-s20.herokuapp.com']
+ALLOWED_HOSTS = ['cs300-s20.herokuapp.com', '127.0.0.1']
 # //django_heroku.settings(locals())
 
 INSTALLED_APPS = [
@@ -106,7 +106,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
-CORS_ORIGIN_WHITELIST = ('localhost:3000')
+CORS_ORIGIN_WHITELIST = ['localhost:3000', 'cs300-s20.herokuapp.com']
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
