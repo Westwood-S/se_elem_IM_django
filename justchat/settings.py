@@ -1,11 +1,9 @@
 import os
-# //import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9nneu#^7_aai*(#(6_qiihu-^k-+%a86&vjh=_i9#(c4^8s51n'
-DEBUG = False
-ALLOWED_HOSTS = ['cs300-s20.herokuapp.com', '0.0.0.0']
-# //django_heroku.settings(locals())
+DEBUG = True
+ALLOWED_HOSTS = ['cs300-server-272222.appspot.com', '0.0.0.0', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -70,8 +68,12 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cs300db',
+        'USER': 'admin',
+        'PASSWORD': 'matt1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -88,7 +90,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_URL = '/static/'
+STATIC_URL = 'https://storage.googleapis.com/cs300/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
@@ -106,12 +108,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
-CORS_ORIGIN_WHITELIST = ['localhost:3000', 'cs300-s20.herokuapp.com']
+CORS_ORIGIN_WHITELIST = ['localhost:3000']
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 CSRF_COOKIE_NAME = "csrftoken"
 
-HOST_URL = 'https://cs300-s20.herokuapp.com'
+HOST_URL = 'http://cs300-server-272222.appspot.com'
 if DEBUG:
     HOST_URL = 'http://127.0.0.1:8000'
